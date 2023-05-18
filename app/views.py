@@ -85,7 +85,7 @@ class LoginView(APIView):
 #         return JsonResponse(serializer.data)
 
 class Userdetails(APIView):
-    # permission_classes = [CustomIsauthenticated]
+    permission_classes = [CustomIsauthenticated]
     def get(self,request):
         user = USER_details.objects.all()
         serializer = USER_Serializer(user,many=True)
