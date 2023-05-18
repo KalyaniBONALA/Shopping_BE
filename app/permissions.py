@@ -40,6 +40,7 @@ class CustomIsauthenticated(IsAuthenticated):
             payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])
             print(payload)
             user = USER_details.objects.get(_id=ObjectId(payload['user_id']))
+            print(user,"************")
             return True
         except (KeyError, jwt.exceptions.DecodeError, USER_details.DoesNotExist):
             raise AuthenticationFailed({'message': 'Authorization details are not provided'})

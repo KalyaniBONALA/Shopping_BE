@@ -12,4 +12,5 @@ class Personal_Serializer(serializers.ModelSerializer):
     class Meta:
         model = Personal_info
         fields = ['email','gender','username']
-        
+
+       
